@@ -60,5 +60,8 @@
     "scrollmagic": "^2.0.6",
     "scrollmagic-plugin-gsap": "^1.0.3",
     "three": "^0.104.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
