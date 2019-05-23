@@ -5,6 +5,7 @@ import $ from 'jquery';
 // import jQueryBridget from "jquery-bridget";
 // import Flickity from "flickity";
 import * as ScrollMagic from 'scrollmagic';
+import ScrollBar from 'smooth-scrollbar';
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax, TweenLite, Sine);
@@ -309,7 +310,8 @@ $(document).ready(function(e) {
 	const controller = new ScrollMagic.Controller({
 		globalSceneOptions: {
 			triggerHook: 0
-		}
+		},
+		// refreshInterval: 0
 	});
 
 	const tween = new TimelineMax();
@@ -328,9 +330,13 @@ $(document).ready(function(e) {
 			ease: Sine.easeInOut,
 		}, -1)
 		.to('.project-slider', 10, {
-			x: -3050,
+			x: -3950,
 			ease: Sine.easeInOut,
 		}, -1)
+		.to('.slide-text-2', 1.5, {
+			opacity: 1,
+			ease: Sine.easeInOut,
+		}, 9)
 		.to('#app', 1, {
 			background: '#3429BC',
 			ease: Sine.easeInOut,
@@ -355,6 +361,12 @@ $(document).ready(function(e) {
 		.setTween(tween)
 		.setPin('.artem-slider', { pushFollowers: true })
 		.addTo(controller);
+	
+	// const scrollbar = ScrollBar.init(document.querySelector('.artem-slider'))
+	// // ScrollBar.initAll()
+	// scrollbar.addListener(() => {
+	// 	scene.refresh()
+	// })
 });
 
 /* Flickity Slider
