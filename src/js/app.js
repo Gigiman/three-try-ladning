@@ -251,7 +251,6 @@ var hoverEffect = function(opts) {
 						value: 0,
 						ease: easing,
 					})
-					// alert('pause')
 				}, 1000); // waiting 250ms to change back to false.
 			}
 		});
