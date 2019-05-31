@@ -246,13 +246,11 @@ var hoverEffect = function(opts) {
 				// do something
 				setTimeout(function() {
 					processing = false;
+					tl.pause()
 					tl.to(mat.uniforms.dispFactor, 1, {
 						value: 0,
 						ease: easing,
-						// repeat: -1,
-						// yoyo: true
 					})
-					tl.pause()
 					// alert('pause')
 				}, 1000); // waiting 250ms to change back to false.
 			}
