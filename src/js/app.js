@@ -215,35 +215,16 @@ var hoverEffect = function(opts) {
 
 		var tl = new TimelineMax();
 
-
-		// document.addEventListener('wheel', function() {
-			// var tl = new TimelineMax();
-			// tl.to(mat.uniforms.dispFactor, 1, {
-			// 	value: 1,
-			// 	ease: easing,
-			// 	repeat: -1,
-			// 	yoyo: true
-			// })
-			// tl.to(mat.uniforms.dispFactor, 1, {
-			// 	value: 0,
-			// 	ease: easing,
-			// 	// repeat: -1,
-			// 	// yoyo: true
-			// })
-			// tl.play()
-		// })
 		var processing = false;
 		$("#app").on('mousewheel', function() {
 			if (processing === false) {
 				processing = true;
-				tl.to(mat.uniforms.dispFactor, 1, {
+				tl.to(mat.uniforms.dispFactor, 0.8, {
 					value: 1,
 					ease: easing,
-					// repeat: -1,
-					// yoyo: true
 				})
 				tl.play()
-				// do something
+
 				setTimeout(function() {
 					processing = false;
 					tl.pause()
@@ -251,7 +232,7 @@ var hoverEffect = function(opts) {
 						value: 0,
 						ease: easing,
 					})
-				}, 1000); // waiting 250ms to change back to false.
+				}, 100); // waiting 250ms to change back to false.
 			}
 		});
 	};
@@ -327,7 +308,7 @@ $(document).ready(function(e) {
 			ease: Sine.easeInOut,
 		}, -1)
 		.to('.project-slider', 10, {
-			x: -3950,
+			x: -4705,
 			ease: Sine.easeInOut,
 		}, -1)
 		.to('.slide-text-2', 1.5, {
@@ -353,7 +334,7 @@ $(document).ready(function(e) {
 	const scene = new ScrollMagic.Scene({
 		triggerElement: '.artem-slider',
 		triggerHook: 0,
-		duration: 4500,
+		duration: 15500,
 	})
 		.setTween(tween)
 		.setPin('.artem-slider', { pushFollowers: true })
@@ -365,17 +346,6 @@ $(document).ready(function(e) {
 	// 	scene.refresh()
 	// })
 });
-
-/* Flickity Slider
-// ================================ */
-// var $slider = $('.project-slider');
-// $slider.flickity({
-// 	cellAlign: "left",
-// 	pageDots: false,
-// 	contain: true,
-// 	percentPosition: false,
-// 	arrowShape: "M98.8,42.4v15.7H30.3l25.3,14.7v15.9L1.2,56.9V43.6l54.5-32.3V27L30.3,42.4H98.8z"
-// });
 
 /* Mouse Events
 // ================================ */
