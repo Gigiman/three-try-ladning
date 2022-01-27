@@ -61,7 +61,7 @@
     "scrollmagic": "^2.0.6",
     "scrollmagic-plugin-gsap": "^1.0.3",
     "smooth-scrollbar": "^8.4.0",
-    "three": "^0.104.0"
+    "three": "^0.137.0"
   },
   "engines": {
     "node": "10.6.0"
